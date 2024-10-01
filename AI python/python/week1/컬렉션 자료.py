@@ -48,7 +48,7 @@ print(number_tuple)
 name_dict = {"name: ": "승열", "age: ": 26}
 # 여기서 name과 age는 키, 승열과 26은 값이다.
 
-del name_dict{"age"}
+del name_dict["age"]
 # del 로 age키를 삭제하기
 
 name_dict.keys()
