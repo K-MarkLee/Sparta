@@ -45,7 +45,7 @@ print(number_tuple)
 
 
 # 딕셔너리
-name_dict = {"name: ": "승열", "age: ": 26}
+name_dict = {"name": "승열", "age": 26}
 # 여기서 name과 age는 키, 승열과 26은 값이다.
 
 del name_dict["age"]
