@@ -1,3 +1,4 @@
+# 명혜님 모듈
 
 # def head_act(eyes, mouth):
 #     if eyes == 0 and mouth == 1:
