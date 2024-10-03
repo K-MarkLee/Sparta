@@ -1,7 +1,10 @@
-
+# 하림님 팔
 from Robot_Arms import arm_act, arm_check
+# 유림님 다리
 from Robot_Legs import leg_act, leg_check
+# 지호님 장비
 from Robot_Weapons import weapon_act, weapon_check
+# 명혜님 머리
 from Robot_Head import head_act, head_check
 
 
