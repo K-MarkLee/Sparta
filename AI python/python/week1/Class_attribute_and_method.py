@@ -75,6 +75,7 @@ class MyClass:
         
 
 # 클래스 변수이다. 이는 클래스 내부 뿐만이 아닌, 이 클래스에 생성된 모든 개체에서도 공유를 한다.
+# 즉 클래스 안에서 변수를 변경해버리면, 변경값이 모든 클래스에 전달되므로 주의해서 사용해야 한다.
     class_variable = 0
 
 # 클래스 메서드 를 정의하는 방법이다.
@@ -96,3 +97,69 @@ myage = MyClass("mark", 26)
 # for i in range(0, 11, 1):
 #     MyClass.increments()
 #     print(MyClass.class_variable)
+
+
+# 정적 메서드의 예시
+class Utility:
+
+# 정적 메서드란 클래스와객체는 없이 맥락에서만 의미가 있다.
+# 따로 self나 cls를 안불러 와도 된다.
+    @staticmethod
+    def add(x,y):
+        return x+y
+    
+print(Utility.add(1,2))
+
+# 상속
+# 상속이란 부모가 되는 클래스의 함수 및 내용을 물려 받아서 재사용하는 개념이다.
+
+class Animal:
+    def __init__(self,name):
+        self.name = name
+
+    def speak (slef):
+        return "소리를 냅니다"
+
+
+# 클래스명 에서 ()는 부모의 클래스 이다.
+class Dog(Animal):
+
+# 상속을 받아도 그것을 재정의 할 수 있다.
+# 이를 메서드 오버라이딩 이라고 한다
+    def speak(self):
+        return f"{self.name}가 멍멍 짖습니다."
+    
+
+dog = Dog("Mickey")
+# Dog 클래스 에는 이름을 불러오는 메서드가 없는데도, 부모에 있기 때문에 들어가는것을 알 수 있다.
+print(dog.speak())
+
+
+# 만약 부모에는 없지만 자식 클래스에서 새로운 인수를 원할때는 
+# dog클레스에서 , init을 불러와준다.
+
+class Dog(Animal):
+    def __init__(self, name, age) :
+
+# 이것은 자식 클래스에서 받은 이름을 재정의 하기 위해 필요한것
+# 이렇게 되면 자식 클래스에서도 이름이 자동으로 펴현된다.
+        super().__init__(name)
+
+
+
+from abc import ABC, abstractmethod
+
+# abstractmethod 는 상속을 받을 클래스에서 무조건 들고 가야하는 함수를 강제한다.
+class Animal(ABC):
+    @abstractmethod
+    def sound(self):
+        pass
+
+
+class Dog(Animal):
+    def __init__(self, name) :
+        self.name = name
+
+# 까먹고 구현을 하지 않음을 방지하는 abstractmethod이다
+    def sound(self):
+        print("멍멍")

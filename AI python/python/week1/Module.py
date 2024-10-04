@@ -8,7 +8,7 @@ import My_module
 My_module.greet("Mark")
 # My_module 에 있는 greet함수를 불러오는 것이다.
 
-from My_module import adult as a
+from My_module import getage as a
 
 a(16)
 
