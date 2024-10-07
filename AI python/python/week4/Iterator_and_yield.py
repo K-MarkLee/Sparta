@@ -42,3 +42,38 @@ class MyIterator :
         else:
 # raise는 의도적으로 에러를 발생 시킨다. 
             raise StopIteration
+        
+
+my_iter = MyIterator([1,2,3])
+
+
+
+
+
+class Dog:
+    def __init__(self, name):
+        self.name = name
+
+dog = Dog("Bob")
+
+for a  in my_iter:
+    print(a)
+
+
+
+def generate_5():
+    yield 1
+    yield 2
+    yield 3
+    yield 4
+    yield 5
+
+gen = generate_5()
+print(next(gen))
+
+
+def test_function():
+    a = 1
+    a+= 1
+    return a
+
